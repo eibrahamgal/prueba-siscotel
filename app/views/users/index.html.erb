@@ -1,0 +1,12 @@
+<h1 class="display-4">Users</h1>
+
+<%= link_to 'Agregar usuario', new_user_path, class: "btn btn-primary mb-3" %>
+
+<div class="list-group">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id), class: "list-group-item list-group-item-action" do %>
+      <h2 class="h5 mb-1"><%= user.nombre %></h2>
+      <p class="mb-1"><%= user.correo %></p>
+    <% end %>
+  <% end %>
+</div>

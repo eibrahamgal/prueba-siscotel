@@ -1,0 +1,50 @@
+<%= form_with(model: @user, class: "card") do |form| %>
+  <div class="card-body">
+    <% @user.errors.full_messages.each do |error| %>
+      <div class="alert alert-danger mb-3">
+        <%= error %>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+    <%= form.label :tipo_persona, class: "font-weight-bold" %>
+    <%= form.select :tipo_persona, options_for_select([['Natural', 'Natural'], ['Juridica', 'Juridica']]), {}, class: "form-control" %>
+  </div>
+    <div class="form-group">
+      <%= form.label :documento, class: "font-weight-bold" %>
+      <%= form.text_field :documento, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :fecha_emision, class: "font-weight-bold" %>
+      <%= form.date_field :fecha_emision, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :fecha_vencimiento, class: "font-weight-bold" %>
+      <%= form.date_field :fecha_vencimiento, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :nombre,class: "font-weight-bold" %>
+      <%= form.text_field :nombre, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :correo, class: "font-weight-bold" %>
+      <%= form.email_field :correo, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :telefono, class: "font-weight-bold" %>
+      <%= form.text_field :telefono, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :telefono_secundario, class: "font-weight-bold" %>
+      <%= form.text_field :telefono_secundario, class: "form-control" %>
+    </div>
+
+    <%= form.submit "Guardar cambios", class: "btn btn-primary" %>
+  </div>
+<% end %>
