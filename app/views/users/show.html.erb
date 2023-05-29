@@ -1,7 +1,12 @@
 <div class="card">
   <div class="card-body">
     <h1 class="card-title mb-4"><%= @user.nombre %></h1>
+    <p class="card-text mb-4"><%= @user.tipo_persona %></p>
+    <p class="card-text mb-4"><%= @user.documento %></p>
+    <p class="card-text mb-4"><%= @user.fecha_emision.strftime('%d-%m-%Y') %></p>
+    <p class="card-text mb-4"><%= @user.fecha_vencimiento.strftime('%d-%m-%Y') %></p> 
     <p class="card-text mb-4"><%= @user.correo %></p>
+    <p class="card-text mb-4"><%= @user.telefono %></p>
     <%= link_to 'Editar usuario', edit_user_path(@user), class: "btn btn-primary mr-3" %>
     <%= link_to 'Eliminar usuario', user_path(@user), class: "btn btn-danger", data: { turbo_method: :delete, confirm: '¿Estás seguro de que quieres eliminar este usuario?' } %>
   </div>
