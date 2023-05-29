@@ -54,6 +54,4 @@ class UsersController <ApplicationController
         params.require(:user).permit(:tipo_persona, :documento, :fecha_emision, :fecha_vencimiento, :nombre, :correo, :telefono, :telefono_secundario, :created_at, :updated_at)
     end
 
-
-
 end    
